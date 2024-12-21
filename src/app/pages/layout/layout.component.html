@@ -1,0 +1,76 @@
+<div class="example-container">
+    <mat-toolbar class="example-toolbar">
+        <button mat-icon-button (click)="sidenav.toggle()">
+            @if (!sidenav.opened) {
+            <mat-icon>menu</mat-icon>
+            }@else {
+            <mat-icon>close</mat-icon>
+            }
+        </button>
+
+        <span>Ecomerce Dog/Cat</span>
+
+        <span class="example-spacer"></span>
+
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+                <mat-icon>account_box</mat-icon>
+                <span>My account</span>
+            </button>
+            <button mat-menu-item (click)="sidenav.opened = false">
+                <mat-icon>exit_to_app</mat-icon>
+                <span>Logout</span>
+            </button>
+        </mat-menu>
+    </mat-toolbar>
+
+    <mat-sidenav-container class="example-sidenav-container">
+        <mat-sidenav #sidenav style="width: 250px" mode="push">
+
+            <img src="perro2.png" width="128" style="margin-left: 50px">
+
+            <mat-divider></mat-divider>
+
+            <button class="myButton" [routerLinkActive]="['active']" mat-menu-item (click)="sidenav.toggle()"
+                routerLink="/orders" style="cursor: pointer">
+                <mat-icon>shopping_cart</mat-icon>
+                <span>Pedidos</span>
+            </button>
+            <mat-divider></mat-divider>
+            <mat-divider></mat-divider>
+            <button class="myButton" [routerLinkActive]="['active']" mat-menu-item (click)="sidenav.toggle()"
+                routerLink="/users" style="cursor: pointer">
+                <mat-icon>group</mat-icon>
+                <span>Gestionar Usuarios</span>
+            </button>
+            <mat-divider></mat-divider>
+            <mat-divider></mat-divider>
+            <button class="myButton" [routerLinkActive]="['actissve']" mat-menu-item (click)="sidenav.toggle()"
+                routerLink="/manage-products" style="cursor: pointer">
+                <mat-icon>store</mat-icon>
+                <span>Gestionar Producto</span>
+            </button>
+            <mat-divider></mat-divider>
+            <mat-divider></mat-divider>
+            <button class="myButton" [routerLinkActive]="['active']" mat-menu-item (click)="sidenav.toggle()"
+                routerLink="/shipping-price" style="cursor: pointer">
+                <mat-icon>attach_money</mat-icon>
+                <span>Gestionar Precio Envio</span>
+            </button>
+            <mat-divider></mat-divider>
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+            <router-outlet />
+        </mat-sidenav-content>
+
+    </mat-sidenav-container>
+    <!-- Footer -->
+    <mat-toolbar color="primary" class="footer">
+        <span>&copy; 2024 Desarrollado por Ruben y Jose</span>
+    </mat-toolbar>
+</div>
