@@ -1,0 +1,22 @@
+:host {
+  display: block;
+}
+
+.bg-orange{
+  background-color: var(--orange);
+}
+
+.bg-white{
+  background-color: #fff;
+}
+.fa-square-facebook{
+  color: blue;
+}
+
+.fa-instagram{
+  color: #ed0006;
+}
+
+.fa-user{
+  color: #F72C25;
+}
