@@ -6,7 +6,7 @@ import { LayoutComponent as user } from './pages/user/layout/layout.component';
 
 export const routes: Routes = [
     {
-        path:"",
+        path:"home",
         component: user
     },
     {
