@@ -1,0 +1,113 @@
+<p>manage-products-dialog works!</p>
+<mat-dialog-content>
+    <mat-toolbar><span>Product Info</span></mat-toolbar>
+
+    <div class="example-container">
+
+        <mat-form-field>
+            <mat-label>Type</mat-label>
+            <mat-select (selectionChange)="onCategoryChange($event.value)" [(ngModel)]="product.category.id">
+                <mat-option *ngFor="let sp of categories; let i = index" [value]="sp.id">
+                    {{sp.type}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Brand</mat-label>
+            <mat-select [(ngModel)]="product.brand.id">
+                <mat-option *ngFor="let sp of brands; let i = index" [value]="sp.id">
+                    {{sp.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="code_branch" [(ngModel)]="product.code_branch">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="name" [(ngModel)]="product.name">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="price" type="number" [(ngModel)]="product.price">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="stock" type="number" [(ngModel)]="product.stock">
+        </mat-form-field>
+
+        <mat-form-field>
+            <textarea matInput placeholder="description" [(ngModel)]="product.description"></textarea>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="pet_type" [(ngModel)]="product.pet_type">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="image_product" [(ngModel)]="product.image_product">
+        </mat-form-field>
+
+        <span *ngIf="selectedCategory === 1"> FOOD </span>
+
+        <mat-form-field *ngIf="selectedCategory === 1">
+            <mat-select placeholder="foodType" [(value)]="product.food_type">
+                <mat-option value="dry">DRY</mat-option>
+                <mat-option value="wet">WET</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field *ngIf="selectedCategory === 1">
+            <input matInput placeholder="weight" type="number" [(ngModel)]="product.weight">
+        </mat-form-field>
+
+        <mat-form-field *ngIf="selectedCategory === 1">
+            <mat-label>Refrigeration</mat-label>
+            <mat-select [(ngModel)]="product.refrigeration">
+                <mat-option [value]="true">Yes</mat-option>
+                <mat-option [value]="false">No</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <span *ngIf="selectedCategory === 2"> Accesory </span>
+
+        <mat-form-field *ngIf="selectedCategory === 2">
+            <mat-select placeholder="accesory_type" [(value)]="product.accesory_type">
+              <mat-option value="collar">COLLAR</mat-option>
+              <mat-option value="toy">TOY</mat-option>
+              <mat-option value="bed">BED</mat-option>
+              <mat-option value="clothes">CLOTHES</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+        <mat-form-field *ngIf="selectedCategory === 2">
+            <mat-label>Hypoallergenic</mat-label>
+            <mat-select [(ngModel)]="product.hypoallergenic">
+                <mat-option [value]="true">Yes</mat-option>
+                <mat-option [value]="false">No</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <span *ngIf="selectedCategory === 3"> Accesory </span>
+
+        <mat-form-field *ngIf="selectedCategory === 3">
+            <mat-select placeholder="hygiene_type" [(ngModel)]="product.hygiene_type">
+              <mat-option value="shampoo">SHAMPOO</mat-option>
+              <mat-option value="freshener">FRESHENER</mat-option>
+              <mat-option value="fragance">FRAGANCE</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+        <mat-form-field *ngIf="selectedCategory === 3">
+            <input matInput placeholder="volume" [(ngModel)]="product.volume">
+        </mat-form-field>
+
+        <button mat-button [disabled]="!isFormValid()" (click)="operate()">Done</button>
+        <button mat-button color="warn" (click)="close()">Cancel</button>
+
+    </div>
+
+
+</mat-dialog-content>
