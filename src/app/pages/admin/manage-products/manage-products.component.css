@@ -22,3 +22,7 @@ td, th {
     height: 50px;
     cursor: pointer;
 }
+
+.low-stock {
+    color: red;
+}

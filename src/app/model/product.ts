@@ -1,12 +1,14 @@
 export class Product {
+    idProduct: number;
+    product_code: string;
     type: string;
     code_branch: string;
     name: string;
     price: number;
     stock: number;
     description: string;
-    category: { id: number };
-    brand: { id: number };
+    category: { id: number, type: string };
+    brand: { id: number, name: string };
     pet_type: string;
     image_product: string;
     // food

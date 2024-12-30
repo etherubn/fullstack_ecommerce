@@ -9,6 +9,7 @@ import { MaterialModule } from '../../../../material/material.module';
 import { CommonModule } from '@angular/common';
 import { Product } from '../../../../model/product';
 import { ProductService } from '../../../../services/product.service';
+import { switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-manage-products-dialog',
@@ -21,14 +22,16 @@ export class ManageProductsDialogComponent {
   categories: Category[] = [];
   brands: Brand[];
   product: Product = {
+    idProduct: 0,
     type: '',
     code_branch: '',
+    product_code: '',
     name: '',
     price: null,
     stock: null,
     description: '',
-    category: { id: 0 },
-    brand: { id: 0 },
+    category: { id: 0 , type: ''},
+    brand: { id: 0 , name: ''},
     pet_type: '',
     image_product: '',
     // food
@@ -115,16 +118,14 @@ export class ManageProductsDialogComponent {
   // Para guardar el producto en la base de datos 
   operate(){
     console.log(this.product);
-    this.productService.save(this.product).subscribe(
-      {
-        next: (value)=> {
-          console.log(value);
-        },
-        error: (err)=> {
-          console.log(err);
-        }
-      }
-    )
+    this.productService
+    .save(this.product)
+    .pipe(switchMap(() => this.productService.findAll()))
+    .subscribe((data) => {
+      this.productService.setProductChange(data);
+      this.productService.setMessageChange('Product saved');
+    });
+    this.close();
   }
 
   close() {
