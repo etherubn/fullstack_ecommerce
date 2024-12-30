@@ -20,3 +20,15 @@
 .fa-user{
   color: #F72C25;
 }
+
+.pata{
+  width: 3rem;
+}
+
+.bg-orange-clear{
+  background-color: #FFC757;
+}
+
+.translate{
+  transform: translateX(-50%);
+}

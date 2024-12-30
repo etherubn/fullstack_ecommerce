@@ -1,27 +1,64 @@
 <header class="w-full bg-orange">
-    
-    {{valor}}
     <h2 class="text-sm mb-0 text-center uppercase">envio gratis <span class="capitalize">sobre</span><span>{{valor}}</span> </h2>
-    <section class="flex justify-content-between p-1 bg-white">
+    <section class="flex justify-content-between align-items-center p-1 bg-white">
         <div class="social-media flex justify-content-around gap-2">
             <i class="fa-brands fa-square-facebook"></i>
             <i class="fa-brands fa-instagram"></i>
             <i class="fa-regular fa-envelope"></i>
         </div>
-        <div class="flex align-items-center gap-2">
+        <div class="flex align-items-center gap-4">
             <i class="fa-solid fa-user"></i>
             <a href="#" class="text-xs capitalize">iniciar sesión</a>
             <a href="#" class="text-xs capitalize">registrarse</a>
         </div>
     </section>
-    <section>
-        <div class="flex gap-1"> 
-            <img src="assets/images/pata.png" alt="catdog">
+    <section class="flex align-items-center justify-content-between relative">
+        <div class="flex align-items-center justify-content-center gap-2"> 
+            <img class="pata" src="/pata.png" alt="catdog">
+            <p>Catdog</p>
         </div>
+        <nav class="flex align-items-center justify-content-around gap-4 align-items-center">
+            <a href="#">Perros</a>
+            <a href="#">Gatos</a>
+            <a href="#">Servicios</a>
+        </nav>
+
+        <div class="z-1 gap-5 w-7 second-nav translate bg-orange-clear absolute flex justify-content-center left-50 top-100">
+            <section>
+                <h2 class="text-base">Alimentos</h2>
+                <ul class="pl-0">
+                    <li><a href="#">Ver Todo</a></li>
+                    <li><a href="#">Alimento seco</a></li>
+                    <li><a href="#">Alimento húmedo</a></li>
+                    <li><a href="#">Refriferado</a></li>
+                </ul>
+            </section>
+            <section>
+                <h2 class="text-base">Accesorios</h2>
+                <ul class="pl-0">
+                    <li><a href="#">Ver Todo</a></li>
+                    <li><a href="#">Hipoalergénico</a></li>
+                    <li><a href="#">Collares</a></li>
+                    <li><a href="#">Juguetes</a></li>
+                    <li><a href="#">Cama</a></li>
+                    <li><a href="#">Ropa</a></li>
+                </ul>
+            </section>
+            <section>
+                <h2 class="text-base">Higiene</h2>
+                <ul class="pl-0">
+                    <li><a href="#">Ver Todo</a></li>
+                    <li><a href="#">Shampoo</a></li>
+                    <li><a href="#">Ambientador</a></li>
+                    <li><a href="#">Fragancia</a></li>
+                </ul>
+            </section>
+        </div>
+
+        <mat-form-field class="custom-input" appearance="fill">
+            <mat-label>Buscar</mat-label>
+            <input  matInput placeholder="">
+            <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
     </section>
-    
-    <section class="flex justify-content-between">
-          
-    </section>
-    
 </header>

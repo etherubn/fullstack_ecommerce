@@ -1,13 +1,15 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ShippingService } from '../../../services/shipping.service';
-import { Shipping } from '../../../model/shipping';
 import { CommonModule } from '@angular/common';
+import { MaterialModule } from '../../../material/material.module';
+
 
 @Component({
   selector: 'app-header',
   standalone: true,
   imports: [
-    CommonModule
+    CommonModule,
+    MaterialModule 
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',

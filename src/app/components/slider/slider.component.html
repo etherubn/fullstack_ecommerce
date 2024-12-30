@@ -1,0 +1,9 @@
+<div class="slider-container">
+    <div class="slider" [style.transform]="sliderTransform">
+        <div class="slide" *ngFor="let product of products">
+            <img [src]="product.image" [alt]="product.name" />
+            <h3>{{ product.name }}</h3>
+        </div>
+    </div>
+    <button class="nav-btn next-btn" (click)="nextSlide()">&#10095;</button>
+</div>
