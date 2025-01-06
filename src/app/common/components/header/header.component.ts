@@ -24,12 +24,12 @@ export class HeaderComponent implements OnInit {
   valor:string|undefined = "" 
   isVisible:boolean = false
   ngOnInit(): void {
-    this.shippingService.getShipping().subscribe(
+    this.shippingService.findAll().subscribe(
       {
-        next: (value)=> {
-          console.log(value);
-          console.log(value?.limit_price+" valor de shippping")
-          this.valor= value?.limit_price.toString()
+        next: (data)=> {
+          console.log(data);
+          console.log(data[0]?.limit_price+" valor de shippping")
+          this.valor= data[0]?.limit_price.toString()
           console.log(this.valor);
           
         },

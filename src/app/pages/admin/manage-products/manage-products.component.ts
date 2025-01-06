@@ -14,7 +14,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-manage-products',
   standalone: true,
-  imports: [MaterialModule, FormsModule,CommonModule],
+  imports: [MaterialModule,CommonModule],
   templateUrl: './manage-products.component.html',
   styleUrl: './manage-products.component.css',
 })
@@ -84,11 +84,12 @@ export class ManageProductsComponent {
     };
   }
 
-  openDialog(product?:Product) {
+  openDialog(product?:Product):void  {
+    console.log('productOpen', product);
     this._dialog.open(ManageProductsDialogComponent, {
       width: '800px',
       height: '600px',
-      data: product 
+      data: product ,
     });
   }
 
@@ -105,7 +106,7 @@ export class ManageProductsComponent {
   delete(idProduct?: number) {
     console.log("id",idProduct);
     this._dialog.open(ManageProductsDeleteDialogComponent, {
-      width: '800px',
+      width: '200px',
       data: idProduct
     });
   }

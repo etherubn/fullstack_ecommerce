@@ -17,7 +17,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import {MatCardModule} from '@angular/material/card';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatRadioModule} from '@angular/material/radio';
-
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [],
@@ -41,7 +41,8 @@ import {MatRadioModule} from '@angular/material/radio';
     MatSelectModule,
     MatDatepickerModule,
     MatCardModule,
-    MatRadioModule
+    MatRadioModule,
+    MatTooltipModule
   ],
   providers: [
     // { provide: MAT_DATE_LOCALE, useValue: 'es-ES' },

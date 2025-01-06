@@ -1,4 +1,3 @@
-<p>manage-products-dialog works!</p>
 <mat-dialog-content>
     <mat-toolbar><span>Product Info</span></mat-toolbar>
 
@@ -6,9 +5,9 @@
 
         <mat-form-field>
             <mat-label>Type</mat-label>
-            <mat-select (selectionChange)="onCategoryChange($event.value)" [(ngModel)]="product.category.id">
+            <mat-select (selectionChange)="onCategoryChange($event.value)" [(ngModel)]="product.category.id" [disabled]="isEdit">
                 <mat-option *ngFor="let sp of categories; let i = index" [value]="sp.id">
-                    {{sp.type}}
+                    {{sp.type | uppercase}}
                 </mat-option>
             </mat-select>
         </mat-form-field>
