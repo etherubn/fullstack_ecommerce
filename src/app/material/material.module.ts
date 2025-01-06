@@ -14,6 +14,10 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import {MatCardModule} from '@angular/material/card';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatRadioModule} from '@angular/material/radio';
+
 
 @NgModule({
   declarations: [],
@@ -22,6 +26,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
   ],
   exports: [
     MatButtonModule,
+    MatChipsModule,
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
@@ -35,6 +40,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     MatDialogModule,
     MatSelectModule,
     MatDatepickerModule,
+    MatCardModule,
+    MatRadioModule
   ],
   providers: [
     // { provide: MAT_DATE_LOCALE, useValue: 'es-ES' },

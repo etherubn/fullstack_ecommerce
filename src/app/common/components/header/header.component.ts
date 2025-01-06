@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ShippingService } from '../../../services/shipping.service';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from '../../../material/material.module';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @Component({
@@ -9,7 +10,7 @@ import { MaterialModule } from '../../../material/material.module';
   standalone: true,
   imports: [
     CommonModule,
-    MaterialModule 
+    MaterialModule
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
@@ -21,6 +22,7 @@ export class HeaderComponent implements OnInit {
   }
   
   valor:string|undefined = "" 
+  isVisible:boolean = false
   ngOnInit(): void {
     this.shippingService.getShipping().subscribe(
       {
@@ -38,6 +40,9 @@ export class HeaderComponent implements OnInit {
     )
   }
 
-
+  
+  showSubMenu(show:boolean):void{
+    this.isVisible=show
+  }
 
 }

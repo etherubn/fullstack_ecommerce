@@ -32,3 +32,11 @@
 .translate{
   transform: translateX(-50%);
 }
+
+.show{
+  display: flex !important;
+}
+
+.hide{
+  display: none !important;
+}

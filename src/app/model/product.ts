@@ -1,4 +1,4 @@
-export class Product {
+export class Product  {
     idProduct: number;
     product_code: string;
     type: string;
@@ -21,4 +21,5 @@ export class Product {
     // hygiene
     volume: number;
     hygiene_type: string;
+    cantidad?:number
 }

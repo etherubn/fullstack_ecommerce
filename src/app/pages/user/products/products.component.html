@@ -1,0 +1,14 @@
+<main class="main yellow flex">
+    <app-filtros class="w-6"></app-filtros>
+
+    <section class="grid grid-nogutter w-auto">
+        @if (!products.length) {
+            <p class="text-center text-2xl">No hay productos</p>
+        }
+        @else {
+            <div class="col-12 sm:col-6 lg:col-4 xl:col-3 p-2" *ngFor="let product of products" >
+                <app-product-card  [product]="product" ></app-product-card>
+            </div>
+        }
+    </section>
+</main>
