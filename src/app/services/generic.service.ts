@@ -27,6 +27,8 @@ export class GenericService<T> {
     return this.http.post(this.url, t);
   }
 
+
+
   update(id: number, t: T){
     return this.http.put(`${this.url}/${id}`, t);
   }
@@ -34,4 +36,9 @@ export class GenericService<T> {
   delete(id: number){
     return this.http.delete(`${this.url}/${id}`);
   }
+
+  patch(id: number, t: T){
+    return this.http.patch(`${this.url}/${id}`, t);
+  }
+
 }

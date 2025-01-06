@@ -1,0 +1,20 @@
+<mat-dialog-content>
+    <mat-toolbar><span>Shipping Price Info</span></mat-toolbar>
+
+    <div class="example-container">
+                
+        <mat-form-field>
+            <input matInput placeholder="limit price" [(ngModel)]="shipping.limit_price" type="number">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="base price" [(ngModel)]="shipping.base_price" type="number">
+        </mat-form-field>
+
+        <button mat-button [disabled]="!isFormValid()" (click)="operate()">Done</button>
+        <button mat-button color="warn" (click)="close()">Cancel</button>
+
+    </div>
+
+
+</mat-dialog-content>
