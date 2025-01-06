@@ -21,4 +21,5 @@ export class Product {
     // hygiene
     volume: number;
     hygiene_type: string;
+    cantidad?: number;
 }
