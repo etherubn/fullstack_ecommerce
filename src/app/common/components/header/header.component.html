@@ -10,6 +10,7 @@
             <i class="fa-solid fa-user"></i>
             <a href="#" class="text-xs capitalize">iniciar sesión</a>
             <a href="#" class="text-xs capitalize">registrarse</a>
+            <a href="#"><mat-icon>shopping_cart</mat-icon></a>
         </div>
     </section>
     <section class="flex align-items-center justify-content-between relative">
@@ -17,45 +18,49 @@
             <img class="pata" src="/pata.png" alt="catdog">
             <p>Catdog</p>
         </div>
-        <nav class="flex align-items-center justify-content-around gap-4 align-items-center">
-            <a href="#">Perros</a>
-            <a href="#">Gatos</a>
-            <a href="#">Servicios</a>
-        </nav>
 
-        <div class="z-1 gap-5 w-7 second-nav translate bg-orange-clear absolute flex justify-content-center left-50 top-100">
-            <section>
-                <h2 class="text-base">Alimentos</h2>
-                <ul class="pl-0">
-                    <li><a href="#">Ver Todo</a></li>
-                    <li><a href="#">Alimento seco</a></li>
-                    <li><a href="#">Alimento húmedo</a></li>
-                    <li><a href="#">Refriferado</a></li>
-                </ul>
-            </section>
-            <section>
-                <h2 class="text-base">Accesorios</h2>
-                <ul class="pl-0">
-                    <li><a href="#">Ver Todo</a></li>
-                    <li><a href="#">Hipoalergénico</a></li>
-                    <li><a href="#">Collares</a></li>
-                    <li><a href="#">Juguetes</a></li>
-                    <li><a href="#">Cama</a></li>
-                    <li><a href="#">Ropa</a></li>
-                </ul>
-            </section>
-            <section>
-                <h2 class="text-base">Higiene</h2>
-                <ul class="pl-0">
-                    <li><a href="#">Ver Todo</a></li>
-                    <li><a href="#">Shampoo</a></li>
-                    <li><a href="#">Ambientador</a></li>
-                    <li><a href="#">Fragancia</a></li>
-                </ul>
-            </section>
+        <div class="menu-container" (mouseenter)="showSubMenu(true)" (mouseleave)="showSubMenu(false)">
+            <nav  class="navbar flex p-4 align-items-center justify-content-around gap-4 align-items-center">
+                <a href="#">Perros</a>
+                <a href="#">Gatos</a>
+                <a href="#">Servicios</a>
+            </nav>
+    
+            <div [ngClass]="{'show':isVisible,'hide':!isVisible}" class="nav z-1 gap-5 w-7 translate bg-orange-clear absolute flex justify-content-center left-50 top-100">
+                <section>
+                    <h2 class="text-base">Alimentos</h2>
+                    <ul class="pl-0">
+                        <li><a href="#">Ver Todo</a></li>
+                        <li><a href="#">Alimento seco</a></li>
+                        <li><a href="#">Alimento húmedo</a></li>
+                        <li><a href="#">Refriferado</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <h2 class="text-base">Accesorios</h2>
+                    <ul class="pl-0">
+                        <li><a href="#">Ver Todo</a></li>
+                        <li><a href="#">Hipoalergénico</a></li>
+                        <li><a href="#">Collares</a></li>
+                        <li><a href="#">Juguetes</a></li>
+                        <li><a href="#">Cama</a></li>
+                        <li><a href="#">Ropa</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <h2 class="text-base">Higiene</h2>
+                    <ul class="pl-0">
+                        <li><a href="#">Ver Todo</a></li>
+                        <li><a href="#">Shampoo</a></li>
+                        <li><a href="#">Ambientador</a></li>
+                        <li><a href="#">Fragancia</a></li>
+                    </ul>
+                </section>
+            </div>
         </div>
+        
 
-        <mat-form-field class="custom-input" appearance="fill">
+        <mat-form-field class="custom-input w-3" appearance="fill">
             <mat-label>Buscar</mat-label>
             <input  matInput placeholder="">
             <mat-icon matSuffix>search</mat-icon>

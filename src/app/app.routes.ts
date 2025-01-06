@@ -6,17 +6,13 @@ import { LayoutComponent as user } from './pages/user/layout/layout.component';
 
 export const routes: Routes = [
     {
-        path:"",
-        component: user
+        path:'',
+        component: user,
+        loadChildren:()=> import('./pages/user/pages.routes').then(m=>m.pagesRoutes)
     },
     {
         path : 'admin',
         component : admin,
         loadChildren: () => import('./pages/pages.routes').then(m => m.pagesRoutes)
-    },
-    {
-        path:"*",
-        redirectTo: ""
     }
-
 ];

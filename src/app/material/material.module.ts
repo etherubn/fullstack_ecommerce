@@ -14,6 +14,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import {MatCardModule} from '@angular/material/card';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatRadioModule} from '@angular/material/radio';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
@@ -23,6 +26,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
   ],
   exports: [
     MatButtonModule,
+    MatChipsModule,
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
@@ -36,6 +40,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatDialogModule,
     MatSelectModule,
     MatDatepickerModule,
+    MatCardModule,
+    MatRadioModule,
     MatTooltipModule
   ],
   providers: [
