@@ -29,10 +29,6 @@
   background-color: #FFC757;
 }
 
-.translate{
-  transform: translateX(-50%);
-}
-
 .show{
   display: flex !important;
 }

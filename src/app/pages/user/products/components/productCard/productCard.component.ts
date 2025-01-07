@@ -24,16 +24,25 @@ import { CarritoService } from '../../../../../services/carrito.service';
     MatChipsModule,
   ],
   templateUrl: './productCard.component.html',
-  styleUrl: './productCard.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  styleUrl: './productCard.component.css'
 })
 export class ProductCardComponent {
   @Input() product: Product = undefined;
+  
 
-  constructor(private carritoService: CarritoService) {}
+  constructor(private carritoService: CarritoService) {
+
+  }
 
   agregarProducto(productoSeleccionado: Product) {
-    console.log(this.product);
     this.carritoService.agregarProducto(productoSeleccionado);
+  }
+
+  getCantidad(id:number){
+    return this.carritoService.getCantidadProducto(id)
+  }
+
+  disminuirProducto(id:number){
+    this.carritoService.eliminarProducto(id)
   }
 }

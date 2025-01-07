@@ -10,7 +10,7 @@
             <i class="fa-solid fa-user"></i>
             <a href="#" class="text-xs capitalize">iniciar sesión</a>
             <a href="#" class="text-xs capitalize">registrarse</a>
-            <a href="#"><mat-icon>shopping_cart</mat-icon></a>
+            <a href="#" (click)="showCart()"><mat-icon>shopping_cart</mat-icon></a>
         </div>
     </section>
     <section class="flex align-items-center justify-content-between relative">
@@ -66,4 +66,5 @@
             <mat-icon matSuffix>search</mat-icon>
         </mat-form-field>
     </section>
+    <app-carrito class="w-5 absolute top-0 right-0 z-5"></app-carrito>
 </header>

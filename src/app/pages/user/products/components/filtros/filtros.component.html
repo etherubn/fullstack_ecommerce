@@ -1,3 +1,50 @@
-<section class="filters"> 
-       <p>filtros</p> 
+<section class="px-4">
+       <div class="data flex align-items-center justify-content-between">
+              <div class="title flex align-items-center">
+                     <mat-icon>tune</mat-icon>
+                     <h2 class="text-base mb-0">Filtros</h2>
+              </div>
+              <a href="#">Borrar todo</a>
+       </div>
+       <div class="filters">
+              <mat-accordion class="example-headers-align" multi>
+                     <mat-expansion-panel>
+                            <mat-expansion-panel-header>
+                                   <mat-panel-title>Tipo de mascota</mat-panel-title>
+                            </mat-expansion-panel-header>
+
+                            <mat-radio-group class="flex flex-column" [(ngModel)]="mascota">
+                                   <mat-radio-button class="example-margin" value="after">Perro</mat-radio-button>
+                                   <mat-radio-button class="example-margin" value="before">Gato</mat-radio-button>
+                            </mat-radio-group>
+                     </mat-expansion-panel>
+                     <mat-expansion-panel>
+                            <mat-expansion-panel-header>
+                                   <mat-panel-title>Tipo de Producto</mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <mat-radio-group class="flex flex-column" [(ngModel)]="producto">
+                                   <mat-radio-button class="example-margin" value="food">Comida</mat-radio-button>
+                                   <mat-radio-button class="example-margin" value="hygiene">Higiene</mat-radio-button>
+                                   <mat-radio-button class="example-margin"
+                                          value="accesory">Accesorio</mat-radio-button>
+                            </mat-radio-group>
+                     </mat-expansion-panel>
+                     <mat-expansion-panel>
+                            <mat-expansion-panel-header>
+                                   <mat-panel-title>Por precio</mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <mat-card class="example-result-card">
+                                   <mat-card-content>
+                                          <div class="example-label-container">
+                                                 <label id="example-name-label" class="example-name-label">Precio:</label>
+                                                 <label class="example-value-label">{{slider.value}}</label>
+                                          </div>
+                                          <mat-slider class="example-margin">
+                                                 <input matSliderThumb [(ngModel)]="precio" #slider>
+                                          </mat-slider>
+                                   </mat-card-content>
+                            </mat-card>
+                     </mat-expansion-panel>
+              </mat-accordion>
+       </div>
 </section>

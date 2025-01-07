@@ -3,6 +3,7 @@ import { ShippingService } from '../../../services/shipping.service';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from '../../../material/material.module';
 import { MatIconModule } from '@angular/material/icon';
+import { CarritoComponent } from "../carrito/carrito.component";
 
 
 @Component({
@@ -10,8 +11,9 @@ import { MatIconModule } from '@angular/material/icon';
   standalone: true,
   imports: [
     CommonModule,
-    MaterialModule
-  ],
+    MaterialModule,
+    CarritoComponent
+],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
 })
@@ -43,6 +45,10 @@ export class HeaderComponent implements OnInit {
   
   showSubMenu(show:boolean):void{
     this.isVisible=show
+  }
+
+  showCart(){
+    
   }
 
 }

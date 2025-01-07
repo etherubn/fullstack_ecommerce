@@ -18,6 +18,11 @@ import {MatCardModule} from '@angular/material/card';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatRadioModule} from '@angular/material/radio';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatSliderModule} from '@angular/material/slider';
+
+
 
 @NgModule({
   declarations: [],
@@ -42,7 +47,10 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatDatepickerModule,
     MatCardModule,
     MatRadioModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatExpansionModule,
+    MatCheckboxModule,
+    MatSliderModule
   ],
   providers: [
     // { provide: MAT_DATE_LOCALE, useValue: 'es-ES' },
