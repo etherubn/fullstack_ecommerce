@@ -1,5 +1,6 @@
 import { Injectable, OnInit } from '@angular/core';
 import { Product } from '../model/product';
+import { Subject } from 'rxjs';
 
 
 @Injectable({
@@ -13,7 +14,18 @@ export class CarritoService{
   }
   
 
-  carrito: Product[] = JSON.parse(localStorage.getItem("shoppingCart")) || []
+  carrito:  Product[] = JSON.parse(localStorage.getItem("shoppingCart")) || []
+
+  carro:Subject<Product[]> = new Subject()
+
+
+  setCarrito(carrito:Product[]){
+    this.carro.next(carrito)
+  } 
+
+  getCarrito(){
+    return this.carro.asObservable()
+  }
 
   agregarProducto(producto:Product){
     const indice = this.carrito.findIndex(product=> product.idProduct===producto.idProduct)
@@ -21,11 +33,14 @@ export class CarritoService{
       this.carrito[indice] = {
         ...producto,cantidad: this.carrito[indice].cantidad+1
       }
+      this.setCarrito(this.carrito)
       localStorage.setItem("shoppingCart",JSON.stringify(this.carrito))
     }else{
       this.carrito = [...this.carrito,{...producto,cantidad:1}]
+      this.setCarrito(this.carrito)
       localStorage.setItem("shoppingCart",JSON.stringify(this.carrito))
     }
+    
   }
 
   eliminarProducto(id:number){
@@ -35,8 +50,10 @@ export class CarritoService{
         ...this.carrito.slice(0, indice),  
         ...this.carrito.slice(indice + 1) 
       ];
+      this.setCarrito(this.carrito)
     }else{
       this.carrito = this.carrito.map(product=> product.idProduct===id? {...product,cantidad:product.cantidad-1}:product)
+      this.setCarrito(this.carrito)
     }
 
     localStorage.setItem("shoppingCart",JSON.stringify(this.carrito))
@@ -44,6 +61,10 @@ export class CarritoService{
 
   vaciarCarrito(){
     this.carrito=[]
+  }
+
+  get carritoProducts(){
+    return this.carrito
   }
 
   
