@@ -1,5 +1,3 @@
-<p>manage-orders works!</p>
-
 <mat-form-field>
     <mat-label>Filter</mat-label>
     <input matInput (keyup)="applyFilter($event)" #input>
@@ -20,22 +18,24 @@
 
           <ng-container matColumnDef="selling_state">
             <th mat-header-cell *matHeaderCellDef> Estado de la Orden </th>
-            <td mat-cell *matCellDef="let row"> {{row.selling_state | uppercase}} </td>
-        </ng-container>
+            <td mat-cell *matCellDef="let row" [ngClass]="getClassBySellingState(row.selling_state)">
+              {{row.selling_state | uppercase}}
+            </td>
+          </ng-container>
 
   
           <ng-container matColumnDef="actions">
-              <th mat-header-cell *matHeaderCellDef> Cambiar Estado </th>
-              <td mat-cell *matCellDef="let row">
-                <button  mat-button matTooltip="Cambiar estado" (click)="changeState(row)">
-                  <mat-icon>skip_next</mat-icon>
-                </button>
-              </td>
-            </ng-container>
+            <th mat-header-cell *matHeaderCellDef> Cambiar Estado </th>
+            <td mat-cell *matCellDef="let row" >
+              <button mat-button matTooltip="Cambiar estado" (click)="changeState(row)" >
+                <mat-icon [ngClass]="getClassBySellingState(row.selling_state)">skip_next</mat-icon>
+              </button>
+            </td>
+          </ng-container>
   
           <tr mat-header-row *matHeaderRowDef="getDisplayedColumns()"></tr>
           <tr mat-row *matRowDef="let row; columns: getDisplayedColumns();"></tr>
-          
+
       </table>
   </div>
   

@@ -136,6 +136,17 @@ export class OrdersComponent {
     }
   }
 
-
+  getClassBySellingState(sellingState: string): string {
+    switch (sellingState) {
+      case 'processing order':
+        return 'processing';
+      case 'sending order':
+        return 'sending';
+      case 'order delivered':
+        return 'delivered';
+      default:
+        return '';
+    }
+  }
 
 }

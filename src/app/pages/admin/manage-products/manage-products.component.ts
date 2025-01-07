@@ -46,6 +46,7 @@ export class ManageProductsComponent {
       this.createTable(this.products);
       console.log('products', this.products);
     });
+    
     this.productService.getProductChange().subscribe((data) => {
       this.createTable(data);
     });
