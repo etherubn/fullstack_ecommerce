@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { MaterialModule } from '../../../material/material.module';
 import { MatIconModule } from '@angular/material/icon';
 import { CarritoComponent } from "../carrito/carrito.component";
+import { CarritoService } from '../../../services/carrito.service';
 
 
 @Component({
@@ -19,7 +20,12 @@ import { CarritoComponent } from "../carrito/carrito.component";
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private shippingService:ShippingService){
+  showCArrito:boolean= false
+
+  constructor(
+    private shippingService:ShippingService,
+    private carritoService:CarritoService
+  ){
 
   }
   
@@ -29,17 +35,17 @@ export class HeaderComponent implements OnInit {
     this.shippingService.findAll().subscribe(
       {
         next: (data)=> {
-          console.log(data);
-          console.log(data[0]?.limit_price+" valor de shippping")
-          this.valor= data[0]?.limit_price.toString()
-          console.log(this.valor);
-          
+          this.valor= data[0]?.limit_price.toString() 
         },
         error: (err)=> {
           console.log(err);
         }
       }
     )
+
+    this.carritoService.getShowCarrito().subscribe(val=>{
+      this.showCArrito= val
+    })
   }
 
   
@@ -48,7 +54,7 @@ export class HeaderComponent implements OnInit {
   }
 
   showCart(){
-    
+    this.carritoService.setShowCArrito(true)
   }
 
 }

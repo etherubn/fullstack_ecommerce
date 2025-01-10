@@ -5,3 +5,15 @@
 .white{
   background-color: #fff;
 }
+
+.border-red{
+  border: 1px solid var(--orange);
+}
+
+.background-none{
+  background-color: transparent;
+}
+
+.orange{
+  background-color: var(--orange);
+}

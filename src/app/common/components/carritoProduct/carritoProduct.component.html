@@ -3,12 +3,13 @@
         <img [src]="product.image_product" [alt]="product.name">
     </div>
     <div class="flex flex-column align-items-start">
-        <p class="text-base mb-0">{{product.name}}</p>
-        <p class="text-base mb-0">{{product.category.type==="food"? "comida": product.category.type==="accesory"? "accesorio":"higiene"}}</p>
-        <p class="text-base mb-0 font-medium">Cantidad: {{product.cantidad}}</p>
+        <p class="text-xs mb-0">{{product.name}}</p>
+        <p class="text-xs mb-0">{{product.category.type==="food"? "comida": product.category.type==="accesory"? "accesorio":"higiene"}}</p>
+        <p class="text-xs mb-0 font-medium">Cantidad: {{product.cantidad}}</p>
     </div>
+
     <div class="flex flex-column justify-content-between align-items-center">
-        <p>{{product.price}}</p>
-        <button mat-stroked-button>Eliminar</button>
+        <p class="text-xs">{{product.price | currency}}</p>
+        <button (click)="eliminarProducto(product.idProduct)" class="text-base" mat-stroked-button>Eliminar</button>
     </div>
 </div>

@@ -6,6 +6,8 @@ import { CarritoService } from '../../../services/carrito.service';
 import { Product } from '../../../model/product';
 import { CarritoProductComponent } from "../carritoProduct/carritoProduct.component";
 import { CommonModule } from '@angular/common';
+import { ShippingService } from '../../../services/shipping.service';
+import { Shipping } from '../../../model/shipping';
 
 @Component({
   selector: 'app-carrito',
@@ -18,20 +20,49 @@ import { CommonModule } from '@angular/common';
     CommonModule
 ],
   templateUrl: './carrito.component.html',
-  styleUrl: './carrito.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  styleUrl: './carrito.component.css'
 })
 export class CarritoComponent implements OnInit{
 
   carrito:Product[] = []
+  total:number = 0
+  shipping:Shipping = {
+    id:0,
+    base_price:0,
+    limit_price:0
+  }
 
-  constructor(private carritoService:CarritoService){
+  showCarrito:boolean=false
+
+  constructor(
+    private carritoService:CarritoService,
+    private shippingService:ShippingService
+  ){
 
   }
   ngOnInit(): void {
     this.carritoService.getCarrito().subscribe(carro=> {
       this.carrito= carro
+      this.total = this.carritoService.calcularTotal()
+      
     })
+
+    this.carritoService.getShowCarrito().subscribe(val=>{
+      this.showCarrito=val
+    })
+
+    this.shippingService.findAll().subscribe(value=>{
+       this.shipping= value[0]
+    })
+
+
   }
-  
- }
+
+  vaciarCarrito(){
+    this.carritoService.vaciarCarrito()
+  }
+
+  cerrarCarrito(){
+    this.carritoService.setShowCArrito(false)
+  }
+}

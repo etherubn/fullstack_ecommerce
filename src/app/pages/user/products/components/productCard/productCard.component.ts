@@ -1,8 +1,6 @@
 import {
-  ChangeDetectionStrategy,
   Component,
   Input,
-  OnInit,
 } from '@angular/core';
 
 import { MatCardModule } from '@angular/material/card';
@@ -43,6 +41,6 @@ export class ProductCardComponent {
   }
 
   disminuirProducto(id:number){
-    this.carritoService.eliminarProducto(id)
+    this.carritoService.disminuirProducto(id)
   }
 }

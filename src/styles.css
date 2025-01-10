@@ -1,26 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; font-size: 62.5%;}
-
-:root{
-    --green: #A9E5BB;
-    --yellow: #FCF6B1;
-    --orange: #F7B32B;
-    --red: #F72C25;
-    --purple: #2D1E2F;
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 62.5%;
 }
 
-a{
-    text-decoration: none;
-    color: #000;
+html {
+  box-sizing: border-box;
 }
 
-img{
-    width: 100%;
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
-li{
-    list-style-type: none;
+:root {
+  --green: #a9e5bb;
+  --yellow: #fcf6b1;
+  --orange: #f7b32b;
+  --red: #f72c25;
+  --purple: #2d1e2f;
 }
 
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+img {
+  width: 100%;
+}
+
+li {
+  list-style-type: none;
+}
