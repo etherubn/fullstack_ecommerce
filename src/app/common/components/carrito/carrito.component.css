@@ -17,3 +17,40 @@
 .orange{
   background-color: var(--orange);
 }
+
+.background-transparent{
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn{
+  background-color: none;
+  border-radius: 2rem;
+  border: none;
+  width: 12rem;
+  padding-block: 1rem;
+}
+
+.btn-select{
+  background-color: var(--yellow);
+  color: var(--orange);
+  transition: all ease 0.5s;
+}
+
+.btn-buy{
+  background-color: var(--green);
+  color: var(--purple);
+  transition: all ease 0.5s
+}
+
+.btn-buy:hover{
+  background-color: var(--purple);
+  color: var(--green);
+
+}
+
+.btn-select:hover{
+  background-color: var(--orange);
+  color: var(--yellow);
+  cursor: pointer;
+}
