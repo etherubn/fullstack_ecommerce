@@ -26,3 +26,16 @@ td, th {
 .low-stock {
   color: red;
 }
+
+.processing {
+  color: red;
+  
+}
+
+.sending {
+  color: orange;
+}
+
+.delivered {
+  color: green;
+}
