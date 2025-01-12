@@ -1,0 +1,13 @@
+:host {
+  display: block;
+}
+
+.purple-text{
+  color: var(--orange) !important;
+  cursor: pointer;
+}
+
+.register-image{
+  width: 35%;
+  margin-inline: auto;
+}

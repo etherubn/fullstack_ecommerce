@@ -5,3 +5,11 @@
 .yellow{
   background-color: var(--yellow);
 }
+
+.filtro{
+  flex: 1.5;
+}
+
+.productos{
+  flex: 4;
+}

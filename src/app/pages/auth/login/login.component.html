@@ -1,0 +1,37 @@
+<mat-card class="example-card" appearance="outlined">
+    <mat-card-header class="justify-content-center">
+        <mat-card-title class="text-4xl">Inicio de sesión</mat-card-title>
+        <mat-card-subtitle>¿No tienes usuario? <a class="purple-text" routerLink="/auth/register">
+                Registrate</a></mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image class="register-image"
+        src="https://i.pinimg.com/736x/0d/96/b8/0d96b84bde7a570c94ee4f8808bc6876.jpg" alt="perro">
+    <mat-card-content>
+        <form [formGroup]="loginForm">
+            <mat-form-field class="w-full pt-0">
+                <mat-label>Usuario</mat-label>
+                <input [formControl]="usernameControl" matInput>
+                <mat-error>
+                    <app-form-error [formError]="usernameControl.errors"></app-form-error>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="w-full">
+                <mat-label>Password</mat-label>
+                <input [formControl]="passwordControl" matInput [type]="hide ? 'password' : 'text'">
+                <button class="" mat-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+                    <mat-icon class="pr-0 mx-0">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <mat-error>
+                    <app-form-error [formError]="passwordControl.errors"></app-form-error>
+                </mat-error>
+            </mat-form-field>
+        </form>
+        <div class="my-1" *ngIf="!error.length">
+            <p>{{error}}</p>
+        </div>
+    </mat-card-content>
+    <mat-card-actions>
+        <button (click)="sendForm()" [disabled]="!loginForm.valid" class="w-full" mat-button>Registrarse</button>
+    </mat-card-actions>
+</mat-card>

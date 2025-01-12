@@ -1,0 +1,42 @@
+<mat-card class="example-card" appearance="outlined">
+    <mat-card-header class="justify-content-center">
+        <mat-card-title class="text-4xl">Registro</mat-card-title>
+        <mat-card-subtitle>¿Ya tienes un perfil? <a class="purple-text" routerLink="/auth/sign-up"> Iniciar
+                sesión</a></mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image class="register-image"
+        src="https://png.pngtree.com/png-clipart/20230406/original/pngtree-cartoon-dog-cute-puppy-sticker-png-image_9029378.png"
+        alt="perro">
+    <mat-card-content>
+        <form [formGroup]="registerForm">
+            <mat-form-field class="w-full pt-0">
+                <mat-label>Usuario</mat-label>
+                <input [formControl]="usernameControl" matInput>
+                <mat-error>
+                    <app-form-error [formError]="usernameControl.errors"></app-form-error>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="w-full">
+                <mat-label>Correo</mat-label>
+                <input [formControl]="emailControl" matInput>
+                <mat-error>
+                    <app-form-error [formError]="emailControl.errors"></app-form-error>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="w-full">
+                <mat-label>Password</mat-label>
+                <input [formControl]="passwordControl" matInput [type]="hide ? 'password' : 'text'">
+                <button class="" mat-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+                    <mat-icon class="pr-0 mx-0">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <mat-error>
+                    <app-form-error [formError]="passwordControl.errors"></app-form-error>
+                </mat-error>
+            </mat-form-field>
+        </form>
+    </mat-card-content>
+    <mat-card-actions>
+        <button (click)="sendForm()" class="w-full" mat-button [disabled]="!registerForm.valid">Registrarse</button>
+    </mat-card-actions>
+</mat-card>

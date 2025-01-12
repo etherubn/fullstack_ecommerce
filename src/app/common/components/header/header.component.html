@@ -1,6 +1,6 @@
 
 
-<header class="w-full bg-orange">
+<header class="w-full bg-orange relative">
     <h2 class="text-sm mb-0 text-center uppercase">envio gratis <span class="capitalize">sobre </span><span>{{valor | currency}}</span> </h2>
     <section class="flex justify-content-between align-items-center p-1 bg-white">
         <div class="social-media flex justify-content-around gap-2">
@@ -10,12 +10,12 @@
         </div>
         <div class="flex align-items-center gap-4">
             <i class="fa-solid fa-user"></i>
-            <a href="#" class="text-xs capitalize">iniciar sesión</a>
-            <a href="#" class="text-xs capitalize">registrarse</a>
+            <a routerLink="/auth/sign-up" class="text-xs capitalize">iniciar sesión</a>
+            <a routerLink="/auth/register" class="text-xs capitalize">registrarse</a>
             <a (click)="showCart()"><mat-icon>shopping_cart</mat-icon></a>
         </div>
     </section>
-    <section class="flex align-items-center justify-content-between relative">
+    <section class="flex align-items-center justify-content-between">
         <div class="flex align-items-center justify-content-center gap-2"> 
             <img class="pata" src="/pata.png" alt="catdog">
             <p>Catdog</p>
@@ -28,11 +28,11 @@
                 <a href="#">Servicios</a>
             </nav>
     
-            <div [ngClass]="{'show':isVisible,'hide':!isVisible}" class="nav z-1 gap-5 w-7 translate bg-orange-clear absolute flex justify-content-center left-50 top-100">
+            <div [ngClass]="{'show':isVisible,'hide':!isVisible}" class="nav z-1 gap-5 w-7 translate bg-orange-clear absolute flex justify-content-center top-100 left-50">
                 <section>
                     <h2 class="text-base">Alimentos</h2>
                     <ul class="pl-0">
-                        <li><a href="#">Ver Todo</a></li>
+                        <li><a routerLink="/products">Ver Todo</a></li>
                         <li><a href="#">Alimento seco</a></li>
                         <li><a href="#">Alimento húmedo</a></li>
                         <li><a href="#">Refriferado</a></li>
@@ -41,7 +41,7 @@
                 <section>
                     <h2 class="text-base">Accesorios</h2>
                     <ul class="pl-0">
-                        <li><a href="#">Ver Todo</a></li>
+                        <li><a routerLink="/products">Ver Todo</a></li>
                         <li><a href="#">Hipoalergénico</a></li>
                         <li><a href="#">Collares</a></li>
                         <li><a href="#">Juguetes</a></li>
@@ -52,7 +52,7 @@
                 <section>
                     <h2 class="text-base">Higiene</h2>
                     <ul class="pl-0">
-                        <li><a href="#">Ver Todo</a></li>
+                        <li><a routerLink="/products">Ver Todo</a></li>
                         <li><a href="#">Shampoo</a></li>
                         <li><a href="#">Ambientador</a></li>
                         <li><a href="#">Fragancia</a></li>

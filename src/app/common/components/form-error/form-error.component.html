@@ -1,0 +1,10 @@
+<div *ngFor="let error of formError | keyvalue">
+    <ng-container [ngSwitch]="error.key">
+        <p class="text-danger" *ngSwitchCase="'required'">Se requiere contenido en el campo</p>
+        <p class="text-danger" *ngSwitchCase="'minlength'">Debe tener {{error.value.requiredLength}} caracteres</p>
+        <p class="text-danger" *ngSwitchCase="'maxlength'">Debe tener {{error.value.requiredLength}} caracteres como máximo</p>
+        <p class="text-danger" *ngSwitchCase="'email'">Ingresar correo válido</p>
+        <p class="text-danger" *ngSwitchCase="'usuarioExiste'">El usuario ya existe</p>
+        <p class="text-danger" *ngSwitchCase="'emailExiste'">El email ya existe</p>
+    </ng-container>
+</div>

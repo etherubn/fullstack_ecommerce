@@ -1,0 +1,4 @@
+:host {
+  display: block;
+  background: linear-gradient(to right, var(--yellow), var(--orange));
+}

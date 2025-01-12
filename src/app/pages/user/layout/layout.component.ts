@@ -3,7 +3,7 @@ import { HeaderComponent } from "../../../common/components/header/header.compon
 import { SliderComponent } from "../../../components/slider/slider.component";
 import { BrandsComponent } from "../home/components/brands/brands.component";
 import { FooterComponent } from "../../../common/components/footer/footer.component";
-import { Router, RouterOutlet } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-layout',
