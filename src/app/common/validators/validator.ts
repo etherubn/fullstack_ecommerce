@@ -18,7 +18,7 @@ export const validadorNombre = ():AsyncValidatorFn =>{
             .pipe(
                 map(response=> response.data[0]),
                 map(existe => existe? {usuarioExiste:true}:null),
-                delay(2000)
+                delay(2500)
             )
 
     }
@@ -36,7 +36,7 @@ export const validadoEmail = ():AsyncValidatorFn =>{
             .pipe(
                 map(response=> response.data[0]),
                 map(existe => existe? {emailExiste:true}:null),
-                delay(2000)
+                delay(2500)
             )
 
     }

@@ -6,7 +6,7 @@
       <mat-card-subtitle class="text-sm">Precio: {{product.price | currency  }} </mat-card-subtitle>
     </mat-card-header>
     <mat-card-actions class="flex flex-column">
-      <button class="w-full" mat-button>Info <mat-icon>more_horiz</mat-icon> </button>
+      <button [routerLink]="['/products/',product.idProduct]" class="w-full" mat-button>Info <mat-icon>more_horiz</mat-icon> </button>
       <button *ngIf="!getCantidad(product.idProduct)" mat-button class="w-full border-1 border-round-3xl" (click)="agregarProducto(product)">Agregar Producto</button>
       <ng-container *ngIf="getCantidad(product.idProduct)===1">
         <div class="border-1 border-round-3xl w-full flex align-items-center justify-content-around">

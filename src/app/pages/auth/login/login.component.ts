@@ -11,6 +11,8 @@ import { AuthService } from '../../../services/auth.service';
 import { LoginUser } from '../../../model/loginUser';
 import { Subject } from 'rxjs';
 import { CommonModule } from '@angular/common';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { UserStorageService } from '../../../services/user-storage.service';
 
 @Component({
   selector: 'app-login',
@@ -24,7 +26,8 @@ import { CommonModule } from '@angular/common';
     MatFormFieldModule,
     FormErrorComponent,
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
+    MatSnackBarModule
 ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
@@ -41,7 +44,8 @@ export class LoginComponent {
   constructor(
     private authService:AuthService,
     private fb:FormBuilder,
-    private router:Router
+    private router:Router,
+    private snackbar:MatSnackBar
   ){
     this.loginForm = this.fb.group({
       username:this.usernameControl,
@@ -54,7 +58,8 @@ export class LoginComponent {
       this.authService.login(this.loginForm.value as LoginUser).subscribe({
         next: val=> {
           this.error=""
-          console.log(val)
+          console.log(val);
+          this.snackbar.open("Usuario autenticado con éxito!!!",'Close',{duration:5000})
           this.router.navigateByUrl("")
         },
         error: err => {

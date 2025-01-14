@@ -10,6 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatChipsModule } from '@angular/material/chips';
 import { CarritoService } from '../../../../../services/carrito.service';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-product-card',
@@ -20,6 +21,7 @@ import { CarritoService } from '../../../../../services/carrito.service';
     MatButtonModule,
     MatIconModule,
     MatChipsModule,
+    RouterLink
   ],
   templateUrl: './productCard.component.html',
   styleUrl: './productCard.component.css'

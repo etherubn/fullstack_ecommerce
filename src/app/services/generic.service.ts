@@ -21,7 +21,8 @@ export class GenericService<T> {
   
 
   findById(id: number){
-    return this.http.get<T>(`${this.url}/${id}`);
+    return this.http.get<{ status: number; message: string; data: T[] }>(`${this.url}/${id}`)
+      .pipe(map(response=> response.data))
   }
 
   save(t: T){

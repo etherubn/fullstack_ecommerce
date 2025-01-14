@@ -57,8 +57,8 @@ export class RegisterComponent {
 
   sendForm(){
     if(this.registerForm.valid){
-      this.authService.register(this.registerForm.value as RegisterUser).subscribe(()=>{
-        this.snackbar.open("Registrado con éxito",'Close',{duration:5000})
+      this.authService.register(this.registerForm.value as RegisterUser).subscribe((val)=>{
+        this.snackbar.open(val,'Close',{duration:5000})
       })
       this.router.navigateByUrl('/auth/sign-up')
     }
